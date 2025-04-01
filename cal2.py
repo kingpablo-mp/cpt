@@ -31,18 +31,33 @@ def calc():
         inputs = []
         user_input = input("Input your calculation")
         inputs.append[user_input]
+        for i in inputs:
+            string += i
+            print(string)
         if user_input == "=":
             solution(inputs)
             break
 def solution(inputs):
+    num = [1,2,3,4,5,6,7,8,9,0]
     operator = ['+','-','/','*','%','//']
     while True:
         index = set(operator) & set(inputs)
-        if index = []:
-            print("error")
-            calc()
+        if index == []:
+            error()
             break
-        
+        for i in index:
+            if index[i-1] in num and index[i+1] in num:
+                # operation
+                pass
+            else:
+                error()
+                break
+
+def error():
+    print("error")
+    calc()
+
+
 
 
 
