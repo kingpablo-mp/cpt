@@ -40,21 +40,38 @@ def calc():
 def solution(inputs):
     num = [1,2,3,4,5,6,7,8,9,0]
     operator = ['+','-','/','*','%','//']
+    ans = 0
     while True:
+        
         index = set(operator) & set(inputs)
         if index == []:
             error()
             break
         for i in index:
-            if index[i-1] in num and index[i+1] in num:
-                # operation
-                pass
+            if input[i-1] in num and input[i+1] in num:
+                insert = [input[i-1],input[i+1]]
+                if input[i] == "+":
+                    ans += add(insert)
+                if input[i] == "-":
+                    ans += sub(insert)
+                if input[i] == "*":
+                    ans += mult(insert)
+                if input[i] == "/":
+                    ans += div(insert)
+                if input[i] == "%":
+                    ans += mod(insert)
+                if input[i] == "//":
+                    ans += floor(insert)
+
+                
+            
+ 
             else:
                 error()
                 break
 
 def error():
-    print("error")
+    print("error") 
     calc()
 
 
