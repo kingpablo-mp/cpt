@@ -1,0 +1,29 @@
+def calc(operation, times):
+    solution = 0
+    numbers = []
+    for i in range (times):
+        numbers.append(int(input("Enter a Number to Calculate: ")))
+    if operation == "+":
+        for i in numbers:
+            solution += i
+
+    elif operation == "-":
+        solution = numbers[0]
+        for i in range (1,times+1):
+            solution -= numbers[i]
+
+    elif operation == "/":
+        solution = numbers[0]
+        for i in range (1,times):
+            solution /= numbers[i]
+    
+    elif operation == "*":
+        solution = 1
+        for i in numbers:
+            solution *= i
+    return "The Solution is: " + str(solution)
+
+
+operation = input("What operation would you like to do? (+,-,/,*) ")
+times = int(input("How many numbers do you want to calculate? "))
+print(calc(operation,times))
